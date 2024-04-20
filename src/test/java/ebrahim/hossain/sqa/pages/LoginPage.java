@@ -74,18 +74,19 @@ public class LoginPage extends CommonMethods {
 		closePlaywright();
 	}
 
+	@SuppressWarnings("static-access")
 	public void login() throws IOException {
-		
+		excelUtils.ReadExcel();
 		try {
 			test.info("Login Page");
 			if (email.isVisible()) {
 				test.info("Please Enter your email address");
-				email.fill("ebrahim@noemail.com");
+				email.fill(excelUtils.email);
 				page.waitForTimeout(1000);
 				handlePass("You have successfully entered your Email");
 				if (password.isVisible()) {
 					test.info("Please Enter your password");
-					password.fill("test@123");
+					password.fill(excelUtils.password);
 					page.waitForTimeout(1000);
 					handlePass("You have successfully entered your Password");
 					if (login_button.isVisible()) {

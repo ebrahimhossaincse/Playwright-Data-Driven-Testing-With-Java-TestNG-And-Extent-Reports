@@ -94,6 +94,7 @@ public class RegisterPage extends CommonMethods {
 		closePlaywright();
 	}
 
+	@SuppressWarnings("static-access")
 	public void login() throws IOException {
 		testDataGenerator();
 		excelUtils.ReadExcel();
@@ -101,30 +102,30 @@ public class RegisterPage extends CommonMethods {
 			test.info("Registration Page");
 			if (firstName.isVisible()) {
 				test.info("Please Enter your First Name");
-				firstName.fill("Md. Ebrahim");
+				firstName.fill(excelUtils.firstName);
 				page.waitForTimeout(1000);
 				handlePass("You have successfully entered your first name");
 				if (lastName.isVisible()) {
 					test.info("Please Enter your Last Name");
-					lastName.fill("Hossain");
+					lastName.fill(excelUtils.lastName);
 					page.waitForTimeout(1000);
 					handlePass("You have successfully entered your last name");
 					if (userName.isVisible()) {
 						test.info("Please Enter your User Name");
-						userName.fill("ebrahim@noemail.com");
+						userName.fill(excelUtils.email);
 						page.waitForTimeout(1000);
 						handlePass("You have successfully entered your user name");
-						if(password.isVisible()) {
+						if (password.isVisible()) {
 							test.info("Please Enter your User Name");
-							password.fill("test@123");
+							password.fill(excelUtils.password);
 							page.waitForTimeout(1000);
 							handlePass("You have successfully entered your password");
-							if(register_button.isVisible()) {
+							if (register_button.isVisible()) {
 								register_button.click();
 								page.waitForTimeout(1000);
 								handlePass("You have successfully clicked on the Register Button");
 							}
-						}else {
+						} else {
 							handleFail("Password was not locateable. Please check the error message",
 									"password_locator_fail");
 						}

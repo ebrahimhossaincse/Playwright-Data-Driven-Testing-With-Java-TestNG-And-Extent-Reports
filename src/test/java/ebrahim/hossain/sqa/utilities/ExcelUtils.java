@@ -11,7 +11,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ExcelUtils {
-	public static String username;
+	public static String firstName;
+	public static String lastName;
+	public static String email;
 	public static String password;
 
 	@SuppressWarnings({ "resource", "unused" })
@@ -33,9 +35,17 @@ public class ExcelUtils {
 				XSSFCell cell = row.getCell(c);
 
 				row = sheet.getRow(r);
+				cell = row.getCell(c + 0);
+				firstName = cell.getStringCellValue();
+				System.out.println(firstName);
+
+				cell = row.getCell(c + 1);
+				lastName = cell.getStringCellValue();
+				System.out.println(lastName);
+
 				cell = row.getCell(c + 2);
-				username = cell.getStringCellValue();
-				System.out.println(username);
+				email = cell.getStringCellValue();
+				System.out.println(email);
 
 				cell = row.getCell(c + 3);
 				password = cell.getStringCellValue();

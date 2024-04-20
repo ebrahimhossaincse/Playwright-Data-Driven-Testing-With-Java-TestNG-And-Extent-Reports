@@ -7,12 +7,13 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ebrahim.hossain.sqa.utilities.CommonMethods;
+import ebrahim.hossain.sqa.utilities.ExcelUtils;
 
 public class LoginPage extends CommonMethods {
 
 	Page page;
 	ExtentTest test;
-
+	ExcelUtils excelUtils = new ExcelUtils();
 	private Locator email;
 	private Locator password;
 	private Locator login_button;
@@ -74,6 +75,7 @@ public class LoginPage extends CommonMethods {
 	}
 
 	public void login() throws IOException {
+		
 		try {
 			test.info("Login Page");
 			if (email.isVisible()) {

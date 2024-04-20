@@ -7,12 +7,13 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ebrahim.hossain.sqa.utilities.CommonMethods;
+import ebrahim.hossain.sqa.utilities.ExcelUtils;
 
 public class RegisterPage extends CommonMethods {
 
 	Page page;
 	ExtentTest test;
-
+	ExcelUtils excelUtils = new ExcelUtils();
 	private Locator firstName;
 	private Locator lastName;
 	private Locator userName;
@@ -94,6 +95,8 @@ public class RegisterPage extends CommonMethods {
 	}
 
 	public void login() throws IOException {
+		testDataGenerator();
+		excelUtils.ReadExcel();
 		try {
 			test.info("Registration Page");
 			if (firstName.isVisible()) {

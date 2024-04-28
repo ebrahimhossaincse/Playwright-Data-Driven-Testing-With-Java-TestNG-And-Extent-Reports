@@ -60,7 +60,7 @@ public class ExcelUtils {
 		XSSFWorkbook workbook = new XSSFWorkbook();
 		XSSFSheet sheet = workbook.createSheet("UserInfo");
 
-		Object data[][] = { { "FirstName", "LastName", "Email", "password" },
+		Object data[][] = { { "FirstName", "LastName", "Email", "Password" },
 				{ firstNameValue, lastNameValue, emailValue, password } };
 
 		int rows = data.length;

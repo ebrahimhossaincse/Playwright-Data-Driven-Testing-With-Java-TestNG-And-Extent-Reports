@@ -33,7 +33,7 @@ public class RegistrationTest extends BaseDriver {
 	public void registrationTest() throws IOException {
 		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>REGISTRATION</b></p>");
 		RegisterPage register = new RegisterPage(childTest, page);
-		register.login();
+		register.registration();
 	}
 
 	@AfterClass

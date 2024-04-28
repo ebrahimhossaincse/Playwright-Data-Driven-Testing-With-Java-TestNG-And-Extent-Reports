@@ -13,7 +13,9 @@ public class RegisterPage extends CommonMethods {
 
 	Page page;
 	ExtentTest test;
+	
 	ExcelUtils excelUtils = new ExcelUtils();
+	
 	private Locator firstName;
 	private Locator lastName;
 	private Locator userName;
@@ -95,7 +97,7 @@ public class RegisterPage extends CommonMethods {
 	}
 
 	@SuppressWarnings("static-access")
-	public void login() throws IOException {
+	public void registration() throws IOException {
 		testDataGenerator();
 		excelUtils.ReadExcel();
 		try {
